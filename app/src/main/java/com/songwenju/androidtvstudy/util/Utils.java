@@ -18,6 +18,7 @@ package com.songwenju.androidtvstudy.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
@@ -139,5 +140,10 @@ public class Utils {
             result += "0" + sec;
         }
         return result;
+    }
+
+    public static boolean hasPermission(final Context context, final String permission) {
+        return PackageManager.PERMISSION_GRANTED == context.getPackageManager().checkPermission(
+                permission, context.getPackageName());
     }
 }

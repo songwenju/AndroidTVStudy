@@ -41,6 +41,7 @@
         <activity android:name="com.songwenju.androidtvstudy.ErrorActivity"/>
         <activity android:name="com.songwenju.androidtvstudy.GuidedStepActivity"
                   android:theme="@style/Theme.Example.Leanback.GuidedStep"/>
+        <activity android:name=".SearchActivity"/>
 
     </application>
 
