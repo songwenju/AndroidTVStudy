@@ -9,11 +9,9 @@ import com.songwenju.androidtools.util.LogUtil;
 import java.util.ArrayList;
 
 public class PlaybackOverlayActivity extends FragmentActivity {
-
     private VideoView mVideoView;
     private ArrayList<Movie> mItems = new ArrayList<Movie>();
     private PlaybackController mPlaybackController;
-
     private Movie mSelectedMovie;
     private int mCurrentItem;
 
@@ -52,12 +50,9 @@ public class PlaybackOverlayActivity extends FragmentActivity {
     }
 
     private void loadViews() {
-        mVideoView = (VideoView) findViewById(R.id.video_View);
         mVideoView.setFocusable(false);
         mVideoView.setFocusableInTouchMode(false);
-
         mPlaybackController.setVideoPath(mSelectedMovie.getVideoUrl());
-
     }
 
     @Override
@@ -68,6 +63,4 @@ public class PlaybackOverlayActivity extends FragmentActivity {
             mPlaybackController.playPause(false);
         }
     }
-
-
 }

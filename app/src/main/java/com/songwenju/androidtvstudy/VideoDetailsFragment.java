@@ -46,15 +46,11 @@ public class VideoDetailsFragment extends DetailsFragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate");
         super.onCreate(savedInstanceState);
-
         mFwdorPresenter = new CustomFullWidthDetailsOverviewRowPresenter(new DetailsDescriptionPresenter());
-
         mPicassoBackgroundManager = new PicassoBackgroundManager(getActivity());
         mSelectedMovie = (Movie) getActivity().getIntent().getSerializableExtra(MOVIE);
-
         mDetailsRowBuilderTask = (DetailsRowBuilderTask) new DetailsRowBuilderTask().execute(mSelectedMovie);
         mPicassoBackgroundManager.updatBackgroundWithDelay(mSelectedMovie.getCardImageUrl());
-        ;
     }
 
     @Override
@@ -85,7 +81,7 @@ public class VideoDetailsFragment extends DetailsFragment {
 
         @Override
         protected void onPostExecute(DetailsOverviewRow row) {
-                    /* 1st row: DetailsOverviewRow */
+            /* 1st row: DetailsOverviewRow */
             SparseArrayObjectAdapter sparseArrayObjectAdapter = new SparseArrayObjectAdapter();
             sparseArrayObjectAdapter.set(0, new Action(ACTION_PLAY_VIDEO, "Play Video"));
             sparseArrayObjectAdapter.set(1, new Action(1, "Action 2", "label"));
@@ -104,7 +100,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                 }
             });
 
-        /* 2nd row: ListRow */
+            /* 2nd row: ListRow */
             ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
 //            for (int i = 0; i < 10; i++) {
 //                Movie movie = new Movie();

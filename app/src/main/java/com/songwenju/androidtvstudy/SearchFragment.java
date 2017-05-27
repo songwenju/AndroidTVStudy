@@ -21,9 +21,9 @@ import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.SpeechRecognitionCallback;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 
+import com.songwenju.androidtools.util.LogUtil;
 import com.songwenju.androidtvstudy.util.Utils;
 
 import java.util.ArrayList;
@@ -59,17 +59,18 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
         setSearchResultProvider(this);
         setOnItemViewClickedListener(new ItemViewClickedListener());
         if (!Utils.hasPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
-            Log.v(TAG, "no permission RECORD_AUDIO");
+            LogUtil.e(this,"SearchFragment.onCreate.no permission RECORD_AUDIO");
             // SpeechRecognitionCallback is not required and if not provided recognition will be handled
             // using internal speech recognizer, in which case you must have RECORD_AUDIO permission
             setSpeechRecognitionCallback(new SpeechRecognitionCallback() {
                 @Override
                 public void recognizeSpeech() {
-                    Log.v(TAG, "recognizeSpeech");
+                    LogUtil.e(TAG, "recognizeSpeech");
                     try {
                         startActivityForResult(getRecognizerIntent(), REQUEST_SPEECH);
                     } catch (ActivityNotFoundException e) {
-                        Log.e(TAG, "Cannot find activity for speech recognizer", e);
+                        e.printStackTrace();
+                        LogUtil.e(TAG, "Cannot find activity for speech recognizer"+e.getMessage());
                     }
                 }
             });
@@ -82,7 +83,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.v(TAG, "onActivityResult requestCode=" + requestCode +
+        LogUtil.v(TAG, "onActivityResult requestCode=" + requestCode +
                 " resultCode=" + resultCode +
                 " data=" + data);
 
@@ -93,28 +94,28 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
                         setSearchQuery(data, true);
                         break;
                     case RecognizerIntent.RESULT_CLIENT_ERROR:
-                        Log.w(TAG, Integer.toString(requestCode));
+                        LogUtil.w(TAG, Integer.toString(requestCode));
                 }
         }
     }
 
     @Override
     public ObjectAdapter getResultsAdapter() {
-        Log.d(TAG, "getResultsAdapter");
+        LogUtil.d(TAG, "getResultsAdapter");
         // mRowsAdapter (Search result) has prepared in loadRows method
         return mRowsAdapter;
     }
 
     @Override
     public boolean onQueryTextChange(String newQuery){
-        Log.i(TAG, String.format("Search Query Text Change %s", newQuery));
+        LogUtil.i(TAG, String.format("Search Query Text Change: %s", newQuery));
         loadQueryWithDelay(newQuery, SEARCH_DELAY_MS);
         return true;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        Log.i(TAG, String.format("Search Query Text Submit %s", query));
+        LogUtil.i(TAG, String.format("Search Query Text Submit %s", query));
         // No need to delay(wait) loadQuery, since the query typing has completed.
         loadQueryWithDelay(query, 0);
         return true;
@@ -138,6 +139,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
      * Searches query specified by mQuery, and sets the result to mRowsAdapter.
      */
     private void loadRows() {
+        LogUtil.i(this,"SearchFragment.loadRows.");
         // offload processing from the UI thread
         new AsyncTask<String, Void, ListRow>() {
             private final String query = mQuery;
@@ -151,6 +153,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
             protected ListRow doInBackground(String... params) {
                 final List<Movie> result = new ArrayList<>();
                 for (Movie movie : mItems) {
+                    LogUtil.i(this,"SearchFragment.doInBackground.title:"+movie.getTitle().toLowerCase(Locale.ENGLISH));
                     // Main logic of search is here.
                     // Just check that "query" is contained in Title or Description or not. (NOTE: excluded studio information here)
                     if (movie.getTitle().toLowerCase(Locale.ENGLISH)
@@ -181,7 +184,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
 
             if (item instanceof Movie) {
                 Movie movie = (Movie) item;
-                Log.d(TAG, "Movie: " + movie.toString());
+                LogUtil.d(TAG, "Movie: " + movie.toString());
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra(DetailsActivity.MOVIE, movie);
 

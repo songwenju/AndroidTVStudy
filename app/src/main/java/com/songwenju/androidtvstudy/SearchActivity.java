@@ -3,7 +3,8 @@ package com.songwenju.androidtvstudy;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v17.leanback.app.SearchFragment;
+
+import com.songwenju.androidtools.util.LogUtil;
 
 /**
  * Created by songwenju on 17-5-23.
@@ -22,6 +23,7 @@ public class SearchActivity extends Activity{
 
     @Override
     public boolean onSearchRequested() {
+        LogUtil.i(this,"SearchActivity.onSearchRequested.");
         //if (mSearchFragment.hasResults()) {
         startActivity(new Intent(this, SearchActivity.class));
         //} else {

@@ -3,6 +3,7 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <!-- TV app need to declare touchscreen not required -->
     <uses-feature
         android:name="android.hardware.touchscreen"

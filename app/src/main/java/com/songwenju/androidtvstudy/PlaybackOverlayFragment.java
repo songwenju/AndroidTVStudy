@@ -30,7 +30,6 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.view.View;
 
 import com.songwenju.androidtools.util.LogUtil;
 import com.songwenju.androidtvstudy.util.Utils;
@@ -196,11 +195,9 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
 
     private void setUpRows() {
         ClassPresenterSelector ps = new ClassPresenterSelector();
-
         PlaybackControlsRowPresenter playbackControlsRowPresenter;
 //        playbackControlsRowPresenter = new PlaybackControlsRowPresenter(new DetailsDescriptionPresenter());
         playbackControlsRowPresenter = new PlaybackControlsRowPresenter(new DescriptionPresenter());
-
         ps.addClassPresenter(PlaybackControlsRow.class, playbackControlsRowPresenter);
         ps.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(ps);
@@ -276,11 +273,8 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
         adapter = mSecondaryActionsAdapter;
         if (adapter.indexOf(action) >= 0) {
             adapter.notifyArrayItemRangeChanged(adapter.indexOf(action), 1);
-            return;
         }
     }
-
-    private static View view;
 
 
     private int getUpdatePeriod() {
