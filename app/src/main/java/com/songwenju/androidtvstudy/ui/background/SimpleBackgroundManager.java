@@ -1,9 +1,11 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui.background;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.util.DisplayMetrics;
+
+import com.songwenju.androidtvstudy.R;
 
 /**
  * songwenju on 17-4-10 : 10 : 15.

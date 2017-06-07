@@ -1,10 +1,11 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.R;
 
 /**
  * Created by songwenju on 17-5-23.

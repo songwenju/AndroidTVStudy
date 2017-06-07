@@ -1,10 +1,14 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.VideoView;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.R;
+import com.songwenju.androidtvstudy.common.PlaybackController;
+import com.songwenju.androidtvstudy.data.MovieProvider;
+import com.songwenju.androidtvstudy.model.Movie;
 
 import java.util.ArrayList;
 

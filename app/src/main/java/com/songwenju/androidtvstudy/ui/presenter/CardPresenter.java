@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui.presenter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.R;
+import com.songwenju.androidtvstudy.model.Movie;
 import com.songwenju.androidtvstudy.util.Utils;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;

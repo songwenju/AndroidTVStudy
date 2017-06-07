@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.Manifest;
 import android.app.Activity;
@@ -24,6 +24,9 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.data.VideoProvider;
+import com.songwenju.androidtvstudy.model.Movie;
+import com.songwenju.androidtvstudy.ui.presenter.CardPresenter;
 import com.songwenju.androidtvstudy.util.Utils;
 
 import java.util.ArrayList;
@@ -39,7 +42,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
     private static final long SEARCH_DELAY_MS = 1000L;
 
     private ArrayObjectAdapter mRowsAdapter;
-    private ArrayList<Movie> mItems = MovieProvider.getMovieItems();
+    private ArrayList<Movie> mItems = VideoProvider.getMovieItems(null);
 
     private final Handler mHandler = new Handler();
     private final Runnable mDelayedLoad = new Runnable() {

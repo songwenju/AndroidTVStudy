@@ -1,7 +1,9 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.songwenju.androidtvstudy.R;
 
 
 public class ErrorActivity extends Activity {

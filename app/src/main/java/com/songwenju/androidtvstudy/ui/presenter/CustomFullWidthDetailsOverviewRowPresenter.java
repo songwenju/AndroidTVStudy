@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui.presenter;
 
 import android.support.v17.leanback.widget.FullWidthDetailsOverviewRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
@@ -11,7 +11,7 @@ import android.support.v17.leanback.widget.RowPresenter;
 
 public class CustomFullWidthDetailsOverviewRowPresenter extends FullWidthDetailsOverviewRowPresenter {
 
-    CustomFullWidthDetailsOverviewRowPresenter(Presenter presenter) {
+    public CustomFullWidthDetailsOverviewRowPresenter(Presenter presenter) {
         super(presenter);
     }
     @Override

@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.model;
 
 import java.io.Serializable;
 import java.net.URI;
@@ -17,7 +17,8 @@ public class Movie implements Serializable{
     private String cardImageUrl;
     private String description;
     private String videoUrl;
-
+    private String bgImageUrl;
+    private String category;
 
     public Movie() {
     }
@@ -79,6 +80,22 @@ public class Movie implements Serializable{
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public String getBgImageUrl() {
+        return bgImageUrl;
+    }
+
+    public void setBackgroundImageUrl(String bgImageUrl) {
+        this.bgImageUrl = bgImageUrl;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.recommendation;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,6 +10,9 @@ import android.graphics.Bitmap;
 import android.support.v7.app.NotificationCompat;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.ui.DetailsActivity;
+import com.songwenju.androidtvstudy.R;
+import com.songwenju.androidtvstudy.model.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.net.URI;

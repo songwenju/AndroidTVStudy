@@ -1,7 +1,9 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+
+import com.songwenju.androidtvstudy.R;
 
 public class DetailsActivity extends FragmentActivity {
     public static final String MOVIE = "Movie";

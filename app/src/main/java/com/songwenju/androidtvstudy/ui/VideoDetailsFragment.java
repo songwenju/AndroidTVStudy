@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,6 +18,12 @@ import android.support.v17.leanback.widget.SparseArrayObjectAdapter;
 import android.util.Log;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.data.MovieProvider;
+import com.songwenju.androidtvstudy.model.Movie;
+import com.songwenju.androidtvstudy.ui.background.PicassoBackgroundManager;
+import com.songwenju.androidtvstudy.ui.presenter.CardPresenter;
+import com.songwenju.androidtvstudy.ui.presenter.CustomFullWidthDetailsOverviewRowPresenter;
+import com.songwenju.androidtvstudy.ui.presenter.DetailsDescriptionPresenter;
 import com.songwenju.androidtvstudy.util.Utils;
 import com.squareup.picasso.Picasso;
 
@@ -50,7 +56,7 @@ public class VideoDetailsFragment extends DetailsFragment {
         mPicassoBackgroundManager = new PicassoBackgroundManager(getActivity());
         mSelectedMovie = (Movie) getActivity().getIntent().getSerializableExtra(MOVIE);
         mDetailsRowBuilderTask = (DetailsRowBuilderTask) new DetailsRowBuilderTask().execute(mSelectedMovie);
-        mPicassoBackgroundManager.updatBackgroundWithDelay(mSelectedMovie.getCardImageUrl());
+        mPicassoBackgroundManager.updateBackgroundWithDelay(mSelectedMovie.getCardImageUrl());
     }
 
     @Override

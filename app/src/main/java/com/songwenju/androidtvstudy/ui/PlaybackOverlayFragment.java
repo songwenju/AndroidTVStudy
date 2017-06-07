@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -32,6 +32,11 @@ import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v4.app.ActivityOptionsCompat;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.common.PlaybackController;
+import com.songwenju.androidtvstudy.data.MovieProvider;
+import com.songwenju.androidtvstudy.model.Movie;
+import com.songwenju.androidtvstudy.ui.presenter.CardPresenter;
+import com.songwenju.androidtvstudy.ui.presenter.DescriptionPresenter;
 import com.songwenju.androidtvstudy.util.Utils;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;

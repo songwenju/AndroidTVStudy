@@ -1,8 +1,10 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.songwenju.androidtvstudy.R;
 
 /**
  * Created by songwenju on 17-5-17.

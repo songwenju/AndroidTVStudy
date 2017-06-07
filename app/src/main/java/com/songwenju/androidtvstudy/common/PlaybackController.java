@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.common;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -16,6 +16,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.model.Movie;
+import com.songwenju.androidtvstudy.data.MovieProvider;
 import com.songwenju.androidtvstudy.util.Utils;
 
 import java.util.ArrayList;

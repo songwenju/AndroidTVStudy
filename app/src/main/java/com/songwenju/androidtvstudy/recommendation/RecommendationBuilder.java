@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.recommendation;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -13,6 +13,7 @@ import android.os.ParcelFileDescriptor;
 import android.support.v7.app.NotificationCompat;
 
 import com.songwenju.androidtools.util.LogUtil;
+import com.songwenju.androidtvstudy.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

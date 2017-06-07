@@ -1,4 +1,6 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.data;
+
+import com.songwenju.androidtvstudy.model.Movie;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,9 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui.presenter;
 
 
 import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
+
+import com.songwenju.androidtvstudy.model.Movie;
 
 /**
  * songwenju on 17-4-13 : 17 : 47.

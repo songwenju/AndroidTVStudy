@@ -1,4 +1,4 @@
-package com.songwenju.androidtvstudy;
+package com.songwenju.androidtvstudy.ui.background;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.util.DisplayMetrics;
 
+import com.songwenju.androidtvstudy.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -57,7 +58,16 @@ public class PicassoBackgroundManager {
         mBackgroundTimer.schedule(new UpdateBackgroundTask(), BACKGROUND_DELAY);
     }
 
-    public void updatBackgroundWithDelay(String url) {
+    /**
+     * update backgroud to default
+     */
+    public void updateBackgroundWithDelay() {
+        mBackgroundURI = null;
+        startBackgroundTimer();
+    }
+
+
+    public void updateBackgroundWithDelay(String url) {
         URI uri = null;
         try {
             uri = new URI(url);
@@ -66,7 +76,7 @@ public class PicassoBackgroundManager {
             e.printStackTrace();
         }
     }
-    public void updatBackgroundWithDelay(URI uri) {
+    public void updateBackgroundWithDelay(URI uri) {
        mBackgroundURI = uri;
         startBackgroundTimer();
     }
